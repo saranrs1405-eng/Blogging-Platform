@@ -5,12 +5,14 @@ app = Flask(__name__)
 app.secret_key = "blogging-platform-secret-key"
 
 
+# DATABASE CONNECTION
 def get_db():
     conn = sqlite3.connect("blog.db")
     conn.row_factory = sqlite3.Row
     return conn
 
 
+# INITIALIZE DATABASE
 def init_db():
     conn = get_db()
 
@@ -36,10 +38,12 @@ def init_db():
 
     conn.commit()
     conn.close()
-    @app.before_request
-    def initialize_database():
-        init_db()
-    
+
+
+# INITIALIZE DATABASE BEFORE REQUEST
+@app.before_request
+def initialize_database():
+    init_db()
 
 
 # HOME
@@ -131,7 +135,6 @@ def login():
         conn.close()
 
         if user:
-
             session["user_id"] = user["id"]
             session["username"] = user["username"]
 
