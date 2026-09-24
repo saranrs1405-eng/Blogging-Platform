@@ -38,10 +38,7 @@ def init_db():
 
     conn.commit()
     conn.close()
-
-
-# INITIALIZE DATABASE BEFORE REQUEST
-@app.before_request
+    @app.before_request
 def initialize_database():
     init_db()
 
