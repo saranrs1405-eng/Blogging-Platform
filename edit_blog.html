@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Blog</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>Edit Blog</h1>
+
+    <form method="POST">
+
+        <label>Blog Title</label>
+        <br>
+
+        <input
+            type="text"
+            name="title"
+            value="{{ blog['title'] }}"
+            required
+        >
+
+        <br><br>
+
+        <label>Blog Content</label>
+        <br>
+
+        <textarea
+            name="content"
+            rows="10"
+            required
+        >{{ blog['content'] }}</textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Update Blog
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

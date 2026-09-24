@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard - BlogSphere</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>BlogSphere</h2>
+
+        <div>
+
+            <a href="/">Home</a>
+
+            <a href="/logout">Logout</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="dashboard">
+
+        <h1>Welcome, {{ session["username"] }}! 👋</h1>
+
+        <p>
+            Welcome to your blogging dashboard.
+        </p>
+
+
+        <div class="dashboard-buttons">
+
+            <a href="/create-blog">
+                Create New Blog
+            </a>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Create Blog - BlogSphere</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>BlogSphere</h2>
+
+        <div>
+
+            <a href="/dashboard">Dashboard</a>
+
+            <a href="/logout">Logout</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="create-blog">
+
+        <h1>Create a New Blog</h1>
+
+        <p>Share your thoughts and ideas with the world.</p>
+
+
+        <form method="POST">
+
+            <label>Blog Title</label>
+
+            <br>
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Enter your blog title"
+                required
+            >
+
+            <br><br>
+
+
+            <label>Blog Content</label>
+
+            <br>
+
+            <textarea
+                name="content"
+                rows="12"
+                placeholder="Write your blog here..."
+                required
+            ></textarea>
+
+            <br><br>
+
+
+            <button type="submit">
+                Publish Blog
+            </button>
+
+        </form>
+
+    </section>
+
+</body>
+
+</html>
